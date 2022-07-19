@@ -46,7 +46,7 @@ var generate = function (numRows) {
   return ans;
 };
 
-console.log(generate(6));
+// console.log(generate(6));
 
 // Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
@@ -61,7 +61,7 @@ var searchInsert = function (nums, target) {
   }
 };
 
-console.log(searchInsert([3, 5, 7, 9, 10, 11, 31, 232, 5], 8));
+// console.log(searchInsert([3, 5, 7, 9, 10, 11, 31, 232, 5], 8));
 
 // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -75,7 +75,7 @@ var isValid = function (s) {
     return true;
   }
 };
-console.log(isValid('()'));
+// console.log(isValid('()'));
 
 // You are given the heads of two sorted linked lists list1 and list2.
 
@@ -83,8 +83,41 @@ console.log(isValid('()'));
 
 // Return the head of the merged linked list.
 
+// var mergeTwoLists = function (list1, list2) {
+//   return [...list1, ...list2].sort((a, b) => a - b);
+// };
+
 var mergeTwoLists = function (list1, list2) {
-  return [...list1, ...list2].sort((a, b) => a - b);
+  let merged = [];
+  let index1 = 0;
+  let index2 = 0;
+  let current = 0;
+  while (current < list1.length + list2.length) {
+    let unmerged1 = list1[index1];
+    let unmerged2 = list2[index2];
+    if (unmerged1 < unmerged2) {
+      merged[current] = unmerged1;
+      index1++;
+    } else {
+      merged[current] = unmerged2;
+      index2++;
+    }
+    current++;
+  }
+
+  return merged;
 };
 
-console.log(mergeTwoLists([5], [0]));
+console.log(mergeTwoLists([1, 2, 4], [1, 3, 4]));
+
+// Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+// A word is a maximal substring consisting of non-space characters only.
+
+var lengthOfLastWord = function (s) {
+  const arr = s.trim().split(' ')
+  return arr[arr.length - 1].length;
+};
+console.log(lengthOfLastWord('        fgdfgdfg fgdfgdfg     '));
+
+
