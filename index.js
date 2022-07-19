@@ -147,18 +147,33 @@ var findMedianSortedArrays = function (nums1, nums2) {
   let arr = [...nums1, ...nums2].sort((a, b) => a - b);
   console.log(arr);
   if (arr.length % 2 == 0) {
-    console.log((arr[(arr.length / 2)-1]))
-    if ((arr[(arr.length / 2)-1]) == 0 && arr[arr.length / 2] == 0) {
+    console.log(arr[arr.length / 2 - 1]);
+    if (arr[arr.length / 2 - 1] == 0 && arr[arr.length / 2] == 0) {
       return 0;
     } else {
-      return (arr[(arr.length / 2)-1] + arr[arr.length / 2]) / 2;
+      return (arr[arr.length / 2 - 1] + arr[arr.length / 2]) / 2;
     }
   } else {
     return arr[(arr.length - 1) / 2];
   }
 };
 
-console.log(findMedianSortedArrays([2,2,4,4]
-,  [2,2,4,4]));
+console.log(findMedianSortedArrays([2, 2, 4, 4], [2, 2, 4, 4]));
 
+// You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
+// Merge all the linked-lists into one sorted linked-list and return it.
+
+var mergeKLists = function (lists) {
+  return lists.flat().sort((a, b) => a - b);
+};
+
+console.log(
+  mergeKLists([
+    [1, 4, 5],
+    [1, 3, 4],
+    [2, 6],
+  ])
+);
+
+console.log('2 + 2(5-6)'.split(' ').join());
