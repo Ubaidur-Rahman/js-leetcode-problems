@@ -62,3 +62,29 @@ var searchInsert = function (nums, target) {
 };
 
 console.log(searchInsert([3, 5, 7, 9, 10, 11, 31, 232, 5], 8));
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+
+var isValid = function (s) {
+  if (s[0] === '(' && s[1] === ')') {
+    return true;
+  }
+};
+console.log(isValid('()'));
+
+// You are given the heads of two sorted linked lists list1 and list2.
+
+// Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+// Return the head of the merged linked list.
+
+var mergeTwoLists = function (list1, list2) {
+  return [...list1, ...list2].sort((a, b) => a - b);
+};
+
+console.log(mergeTwoLists([5], [0]));
