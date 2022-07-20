@@ -228,3 +228,26 @@ var deleteDuplicates = function (head) {
 };
 
 console.log(deleteDuplicates([1, 12, 1, 1, 2, 3]));
+
+// Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
+
+var addDigits = function (num) {
+  if (num < 10) return num;
+  const sumOfIndividualDigits = (n) =>
+    [...`${n}`].map(Number).reduce((acc, value) => acc + value, 0);
+
+  let ans = sumOfIndividualDigits(num);
+
+  if (ans < 9) {
+    return ans;
+  } else {
+    let temp = sumOfIndividualDigits(ans);
+    if (temp < 10) {
+      return temp;
+    } else {
+      return sumOfIndividualDigits(temp);
+    }
+  }
+};
+
+console.log(addDigits(2147483647));
