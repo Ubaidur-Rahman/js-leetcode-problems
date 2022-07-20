@@ -183,10 +183,20 @@ console.log('2 + 2(5-6)'.split(' ').join());
 // Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 var climbStairs = function (n) {
-  return n;
+  let ans = 0,
+    n1 = 1,
+    n2 = 2;
+  if (n == 1) return 1;
+  if (n == 2) return 2;
+  for (let i = 2; i < n; i++) {
+    ans = n1 + n2;
+    n1 = n2;
+    n2 = ans;
+  }
+  return ans;
 };
 
-console.log(climbStairs(2));
+console.log(climbStairs(7));
 
 // Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
 
