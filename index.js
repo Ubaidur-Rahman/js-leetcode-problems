@@ -177,3 +177,44 @@ console.log(
 );
 
 console.log('2 + 2(5-6)'.split(' ').join());
+
+// You are climbing a staircase. It takes n steps to reach the top.
+
+// Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+var climbStairs = function (n) {
+  return n;
+};
+
+console.log(climbStairs(2));
+
+// Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+
+// solution by set
+
+// var deleteDuplicates = function(head) {
+//   return [...new Set(head)].sort((a,b)=>a-b)
+// };
+
+// by forEach method
+
+// var deleteDuplicates = function(head) {
+//   let arr = []
+//     head.forEach((el)=>{
+//     if(!arr.includes(el)){
+//     arr.push(el)
+//     }
+// })
+//   return arr.sort((a,b)=>a-b)
+// };
+
+// by filter method
+
+var deleteDuplicates = function (head) {
+  let uniqueChars = head.filter((element, index) => {
+    return head.indexOf(element) === index;
+  });
+  return uniqueChars.sort((a, b) => a - b);
+};
+
+console.log(deleteDuplicates([1, 12, 1, 1, 2, 3]));
