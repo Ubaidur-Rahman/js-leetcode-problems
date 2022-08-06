@@ -108,7 +108,7 @@ var mergeTwoLists = function (list1, list2) {
   return merged;
 };
 
-console.log(mergeTwoLists([1, 2, 4], [1, 3, 4]));
+// console.log(mergeTwoLists([1, 2, 4], [1, 3, 4]));
 
 // Given a string s consisting of words and spaces, return the length of the last word in the string.
 
@@ -158,7 +158,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
   }
 };
 
-console.log(findMedianSortedArrays([2, 2, 4, 4], [2, 2, 4, 4]));
+// console.log(findMedianSortedArrays([2, 2, 4, 4], [2, 2, 4, 4]));
 
 // You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
@@ -196,7 +196,7 @@ var climbStairs = function (n) {
   return ans;
 };
 
-console.log(climbStairs(7));
+// console.log(climbStairs(7));
 
 // Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
 
@@ -227,7 +227,7 @@ var deleteDuplicates = function (head) {
   return uniqueChars.sort((a, b) => a - b);
 };
 
-console.log(deleteDuplicates([1, 12, 1, 1, 2, 3]));
+// console.log(deleteDuplicates([1, 12, 1, 1, 2, 3]));
 
 // Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
 
@@ -250,14 +250,22 @@ var addDigits = function (num) {
   }
 };
 
-console.log(addDigits(2147483647));
+// console.log(addDigits(2147483647));
 
+// You are given a phone number as a string number. number consists of digits, spaces ' ', and/or dashes '-'.
 
+// You would like to reformat the phone number in a certain manner. Firstly, remove all spaces and dashes. Then, group the digits from left to right into blocks of length 3 until there are 4 or fewer digits. The final digits are then grouped as follows:
 
+// 2 digits: A single block of length 2.
+// 3 digits: A single block of length 3.
+// 4 digits: Two blocks of length 2 each.
+// The blocks are then joined by dashes. Notice that the reformatting process should never produce any blocks of length 1 and produce at most two blocks of length 2.
 
-Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.
+// Return the phone number after formatting.
 
-Each number in candidates may only be used once in the combination.
+var reformatNumber = function (number) {
+  let removeAll = number.trim().replaceAll(/ /g, '').replaceAll(/-/g, '');
+  console.log(removeAll)
+};
 
-Note: The solution set must not contain duplicate combinations.
-
+console.log(reformatNumber('1-23-45 6'));
